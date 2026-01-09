@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flag } from '../types';
+import type { Flag } from '../types';
 import { categories } from '../mockData';
 
 interface FlagCardProps {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { TabBar, TabType } from './components/TabBar';
+import { TabBar } from './components/TabBar';
+import type { TabType } from './components/TabBar';
 import { MyFlags } from './screens/MyFlags';
 import { Discover } from './screens/Discover';
 import { Debrief } from './screens/Debrief';
