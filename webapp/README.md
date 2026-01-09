@@ -1,73 +1,127 @@
-# React + TypeScript + Vite
+# Know Your Worth - Dating App Webapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal reflection and dating awareness app designed for women to define, remember, and honor their standards.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a fully functional webapp prototype built with React, TypeScript, and Tailwind CSS. It demonstrates the complete feature set from the product document with mocked data.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🚩 My Flags
+- Red and green flag lists with categories and weights
+- Organized by importance (Dealbreaker / Matters / Bonus)
+- Beautiful card-based UI with smooth transitions
 
-## Expanding the ESLint configuration
+### ✨ Discover
+- **Prompts**: Reflection questions organized by category to help articulate your standards
+- **Starter Packs**: Pre-made flag collections you can browse and add:
+  - The Bare Minimum
+  - Love Bombing 101
+  - Icks That Are Actually Red Flags
+  - Emotional Maturity Green Flags
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📝 Date Debrief
+- Review history of past dates
+- Track which flags were triggered
+- See patterns per person and overall
+- Pattern warnings for recurring red flags
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📊 Insights
+- Visual breakdown of your standards by category
+- Most triggered flags across all dates
+- Affirming messages and growth tracking
+- Stats dashboard
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### ⚙️ Settings
+- Appearance customization
+- Category management
+- Data export options
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Design System
+
+Following the product specification:
+- **Colors**: Warm cream background (#FDF8F4), muted terracotta (#C97B7B), sage green (#8BA888)
+- **Typography**: Playfair Display (headings) + Inter (body)
+- **Vibe**: "We're Not Really Strangers meets Pinterest meets your Notes app at 2am"
+- **Tone**: Supportive best friend energy - warm, validating, never clinical
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tech Stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS v4** - Styling
+- **Google Fonts** - Playfair Display & Inter
+
+## Project Structure
+
 ```
+webapp/
+├── src/
+│   ├── components/        # Reusable UI components
+│   │   ├── Button.tsx
+│   │   ├── FlagCard.tsx
+│   │   └── TabBar.tsx
+│   ├── screens/          # Main app screens
+│   │   ├── MyFlags.tsx
+│   │   ├── Discover.tsx
+│   │   ├── Debrief.tsx
+│   │   ├── Insights.tsx
+│   │   └── Settings.tsx
+│   ├── types.ts          # TypeScript interfaces
+│   ├── mockData.ts       # Sample data
+│   ├── App.tsx           # Main app component
+│   └── index.css         # Global styles & design system
+├── package.json
+└── vite.config.ts
+```
+
+## Mocked Data
+
+The app includes comprehensive sample data:
+- 16 flags (8 red, 8 green) across various categories
+- 18 reflection prompts
+- 4 starter packs with curated flags
+- 4 date debriefs showing different scenarios
+
+## Next Steps for Production
+
+To convert this prototype into a production app:
+
+1. **State Management**: Add Zustand for persistent state
+2. **Local Storage**: Implement AsyncStorage or similar for data persistence
+3. **Add/Edit Functionality**: Build forms for creating and editing flags
+4. **Debrief Flow**: Implement the step-by-step date debrief process
+5. **Share Feature**: Add image generation for sharing
+6. **Animations**: Enhance with Framer Motion or similar
+7. **Mobile Optimization**: Convert to React Native with Expo for native apps
+8. **Dark Mode**: Complete dark mode theme implementation
+
+## Notes
+
+This is a prototype for UI/UX review. All data is mocked and no changes persist on refresh. The design follows the product document specifications while remaining flexible for iteration based on user feedback.
