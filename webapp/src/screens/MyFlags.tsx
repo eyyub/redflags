@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FlagCard } from '../components/FlagCard';
 import { flags } from '../mockData';
-import { Flag } from '../types';
 
 export const MyFlags: React.FC = () => {
   const [activeView, setActiveView] = useState<'red' | 'green'>('red');
