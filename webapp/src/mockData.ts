@@ -1,4 +1,4 @@
-import { Category, Flag, Prompt, StarterPack, Debrief } from './types';
+import type { Category, Flag, Prompt, StarterPack, Debrief } from './types';
 
 export const categories: Category[] = [
   { id: 'communication', name: 'Communication', emoji: '🗣️', isDefault: true },
